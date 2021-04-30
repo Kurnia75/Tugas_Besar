@@ -17,4 +17,20 @@ Route::group(['middleware' => ['auth']], function () {
         '/',
         [DashboardController::class, 'index']
     )
+    ->name('dashboard');
+    Route::resource('kasir', CashierController::class);
+    Route::resource('barang', ItemController::class);
+    Route::resource('merek', MerkController::class);
     Route::resource('kategori', CategoriesController::class);
+    Route::resource('keuangan', FinanceController::class);
+    Route::resource('pegawai', UserController::class);
+    Route::resource('jabatan', RoleController::class);
+    Route::resource('supplier', SupplierController::class);
+    Route::get(
+        'laporan/absensi',
+        [AttendanceController::class, 'report']
+    )->name('laporan.absensi');
+    Route::get(
+        'laporan/barang',
+        [ItemController::class, 'report']
+    )->name('laporan.barang');
