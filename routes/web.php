@@ -38,3 +38,5 @@ Route::group(['middleware' => ['auth']], function () {
         'laporan/keuangan',
         [FinanceController::class, 'report']
     )->name('laporan.keuangan');
+    Route::resource('profil', ProfileController::class);
+});
