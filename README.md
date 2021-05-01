@@ -72,3 +72,4 @@ Pegawai
 Email    : pegawai@kj.com
 password : 123456
 ```
+<h1 align="center">>> TERIMA KASIH <<</h1>
