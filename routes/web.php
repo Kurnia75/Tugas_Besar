@@ -1,31 +1,40 @@
 <?php
 
-use App\Http\Controllers\AdminController as Admin;
-use App\Http\Controllers\HomeController as Home;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\CashierController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\BrandController;
+use App\Http\Controllers\FinanceController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\MerkController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
-
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get(
         '/',
         [DashboardController::class, 'index']
     )
-    ->name('dashboard');
+        ->name('dashboard');
+    /** Route Kasir **/
     Route::resource('kasir', CashierController::class);
+    /** Route Barang **/
     Route::resource('barang', ItemController::class);
     Route::resource('merek', MerkController::class);
     Route::resource('kategori', CategoriesController::class);
+    /** Route Keuangan **/
     Route::resource('keuangan', FinanceController::class);
+    /** Route Pegawai **/
     Route::resource('pegawai', UserController::class);
     Route::resource('jabatan', RoleController::class);
+    /** Route Supplier **/
     Route::resource('supplier', SupplierController::class);
+    /** Route Laporan **/
     Route::get(
         'laporan/absensi',
         [AttendanceController::class, 'report']
@@ -38,5 +47,29 @@ Route::group(['middleware' => ['auth']], function () {
         'laporan/keuangan',
         [FinanceController::class, 'report']
     )->name('laporan.keuangan');
+    Route::get(
+        'laporan/transaksi',
+        [TransactionController::class, 'report']
+    )->name('laporan.transaksi');
+    /** Route Cetak **/
+    Route::get(
+        'laporan/absensi/cetak',
+        [AttendanceController::class, 'print']
+    )->name('cetak.absensi');
+    Route::get(
+        'laporan/barang/cetak',
+        [ItemController::class, 'print']
+    )->name('cetak.barang');
+    Route::get(
+        'laporan/keuangan/cetak',
+        [FinanceController::class, 'print']
+    )->name('cetak.keuangan');
+    Route::get(
+        'laporan/transaksi/cetak',
+        [TransactionController::class, 'print']
+    )->name('cetak.transaksi');
+    /** Route Profile **/
     Route::resource('profil', ProfileController::class);
 });
+
+require __DIR__ . '/auth.php';

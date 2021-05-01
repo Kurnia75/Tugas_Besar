@@ -1,6 +1,27 @@
-<h1 align="center">>>>>>Tugas_Besar PWL<<<<<</h1>
-<p>
-</p>
+<h1 align="center">Tugas Besar PWL</h1>
+<p> Kurnia Juanugraha 5520119001 IF A 19</p>
+<p> Santuy The Project </p>
+
+
+## PREVIEW
+
+<p>Database</p>
+<img src="preview0.png"/>
+<p>Dashboard Page</p>
+<img src="preview2.png"/>
+<p>User Page</p>
+<img src="preview3.png"/>
+<p>Pengelolaan Barang Page</p>
+<img src="preview4.png"/>
+<p>Kategori Barang Page</p>
+<img src="preview5.png"/>
+<p>Merek Barang Page</p>
+<img src="preview6.png"/>
+<p>Laporan Barang Masuk Page</p>
+<img src="preview7.png"/>
+<p>Laporan Barang Keluar Page</p>
+<img src="preview8.png"/>
+
 
 ## Install
 
@@ -9,13 +30,13 @@ npm install
 composer install
 ```
 ```sh
-## fix if php error
+
+## Fix if php error  
 composer self-update
 composer clear-cache
 rm -rf vendor
 rm composer.lock
 composer install --ignore-platform-reqs
-npm install
 ```
 ## Usage
 
@@ -32,6 +53,22 @@ php artisan storage:link
 php artisan serve
 ```
 
-## Show your support
+## Account
 
-Give a ⭐️ if this project helped you!
+```sh
+Admin
+Email    : admin@kj.com
+password : 123456
+```
+
+```sh
+User
+Email    : user@kj.com
+password : 123456
+```
+
+```sh
+Pegawai
+Email    : pegawai@kj.com
+password : 123456
+```
