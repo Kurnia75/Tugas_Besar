@@ -55,11 +55,10 @@
                                 <td class="px-4 py-3 text-sm">Rp. {{ number_format($data->price,0,',','.') }} / pcs</td>
                             @endif
                         @endforeach
-                        <td class="px-4 py-3 text-sm">1</td>
+                        <td class="px-4 py-3 text-sm">8</td>
                         <td class="px-4 py-3 flex justify-center">
                             <form action="{{ route('barang.destroy', $data->id) }}" method="POST">
                                 <div class="flex items-center space-x-4 text-sm">
-                                    
                                     <a href="{{ route('barang.edit', $data->id) }}" class="px-2 py-2 text-sm font-medium leading-5 text-purple-600 rounded-lg dark:text-gray-400 focus:outline-none focus:shadow-outline-gray" aria-label="Edit" >
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
@@ -80,6 +79,6 @@
                 </tbody>
             </table>
         </div>
-        
+        {!! $dataItem->links() !!}
     </div>
 </x-app-layout>

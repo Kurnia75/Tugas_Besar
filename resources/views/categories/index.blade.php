@@ -54,5 +54,6 @@
                 </tbody>
             </table>
         </div>
+        {!! $result->links() !!}
     </div>
 </x-app-layout>
