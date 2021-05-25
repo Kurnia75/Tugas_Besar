@@ -2,7 +2,7 @@
 <p> Kurnia Juanugraha 5520119001 IF A 19</p>
 <p> Santuy The Project </p>
 
-
+<p>Link Demo Video <a href="https://www.youtube.com/watch?v=gOuzIWRLfLI">Klik Youtube</a></p>
 ## PREVIEW
 
 <p>Database</p>
