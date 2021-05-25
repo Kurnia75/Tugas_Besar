@@ -37,31 +37,31 @@ class DatabaseSeeder extends Seeder
 
         // Admin
         User::create([
-            'name' => 'Admin Unsur',
+            'name' => 'Admin kurnia',
             'address' => $faker->streetAddress,
             'phone' => $faker->e164PhoneNumber,
             'photo' => 'default.png',
-            'email' => 'admin@unsur.com',
+            'email' => 'admin@kj.com',
             'password' => Hash::make(123456)
         ])->roles()->attach(Role::find(1));
 
         // user
         User::create([
-            'name' => 'User Unsur',
+            'name' => 'User kurnia',
             'address' => $faker->streetAddress,
             'phone' => $faker->e164PhoneNumber,
             'photo' => 'default.png',
-            'email' => 'user@unsur.com',
+            'email' => 'user@kj.com',
             'password' => Hash::make(123456)
         ])->roles()->attach(Role::find(2));
 
 
         User::create([
-            'name' => 'Pegawai Unsur',
+            'name' => 'Pegawai kurnia',
             'address' => $faker->streetAddress,
             'phone' => $faker->e164PhoneNumber,
             'photo' => 'default.png',
-            'email' => 'pegawai@unsur.com',
+            'email' => 'pegawai@kj.com',
             'password' => Hash::make(123456)
         ])->roles()->attach(Role::find(3));
 
